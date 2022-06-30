@@ -1,9 +1,10 @@
 import React from "react";
+import type {RootState} from "./store";
 import {useSelector, useDispatch} from "react-redux";
 import {decrement, increment} from "./counterSlice";
 
 export const Counter = () => {
-  const count = useSelector((state) => state.counter.value);
+  const count = useSelector((state: RootState) => state.counter.value);
   const dispatch = useDispatch();
 
   return (
@@ -26,3 +27,9 @@ export const Counter = () => {
     </div>
   );
 };
+
+/*
+버튼을 클릭할 때마다 Redux action이 store로 스토어로 발송(dispatch)
+counter slice reducer가 dispatch를 보고 상태 업데이트함.
+<Counter> 컴포넌트는 스토어로부터 전달받은 새로운 상태값을 보고, 새로운 데이터 자체를 리렌더링
+*/
