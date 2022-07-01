@@ -1,22 +1,18 @@
 {
   "compilerOptions": {
-    "target": "es2015",
-    "lib": ["dom", "dom.iterable", "esnext"],
+    // compilerOptions 생략할 수 있음.
+    "target": "es2015", // ECMAScript 대상 버전 지정
+    "lib": ["dom", "dom.iterable", "esnext"], // 컴파일에 포함될 파일목록
     "baseUrl": "./src",
-    //   "allowJs": true,
-    //   "skipLibCheck": true,
-    //   "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    //   "strict": true,
-    //   "forceConsistentCasingInFileNames": true,
-    //   "noFallthroughCasesInSwitch": true,
+    "allowJs": true, // JS파일의 컴파일을 허용
+    "skipLibCheck": true, // 모든 선언 파일(*.d.ts)의 타입 검사를 건너뜁니다.
+    "allowSyntheticDefaultImports": true, // default export가 없는 모듈에서 default imports를 허용합니다. 코드 방출에는 영향을 주지 않으며, 타입 검사만 수행합니다
+    "strict": true, // 모든 엄격한 타입 검사 옵션을 활성화합니다.
+    "forceConsistentCasingInFileNames": true, // 동일 파일 참조에 대해 일관성 없는 대소문자를 비활성화합니다.
     "module": "esnext",
-    "moduleResolution": "node",
-    //   "resolveJsonModule": true,
-    //   "isolatedModules": true,
-    //   "noEmit": true,
-    "jsx": "react-jsx"
-    //   "noImplicitAny": true
+    "moduleResolution": "node", // 모듈 해석 방법 결정. Node.js/io.js 스타일 해석의 경우, "Node" 또는 "Classic" 중 하나.
+    "jsx": "react-jsx", // .tsx 파일에서 JSX 지원: "React", "Preserve", "react-native". JSX를 확인하세요.
+    "noImplicitAny": true // any 타입으로 암시한 표현식과 선언에 오류를 발생시킴
   },
   "include": ["src"]
 }
