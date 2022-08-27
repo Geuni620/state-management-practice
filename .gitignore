@@ -4,4 +4,10 @@ redux-toolkit/node_modules
 redux-toolkit/.DS_Store
 
 # redux
-redux/node_modules
+1.redux/node_modules
+2.redux/node_modules
+3.redux/node_modules
+
+# mobx
+
+mobx/node_modules
