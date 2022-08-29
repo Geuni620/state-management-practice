@@ -4,6 +4,11 @@ const {login} = require("../actions/user");
 const initialState = {
   isLoggingIn: false,
   data: null,
+  email: "",
+  password: "",
+  prices: Array(100)
+    .fill()
+    .map((v, i) => (i + 1) * 100),
 };
 
 const userSlice = createSlice({

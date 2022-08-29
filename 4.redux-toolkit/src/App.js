@@ -1,12 +1,19 @@
-import {useCallback} from "react";
+import {useCallback, useMemo, useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {login} from "./actions/user";
-import {addPost} from "./actions/post";
 import userSlice from "./reducers/user";
+import {createSelector} from "@reduxjs/toolkit"; /// reselector
+
+const priceSelector = (state) => state.user.prices;
+const sumPriceSelector = createSelector(priceSelector, (prices) =>
+  prices.reduce((acc, v) => acc + v, 0)
+);
 
 function App() {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
+  const totalPrices = useSelector(sumPriceSelector);
+  const [email, setEmail] = useState("");
 
   const onClick = useCallback(() => {
     dispatch(
@@ -17,12 +24,12 @@ function App() {
     );
   }, [dispatch]);
 
+  const onChangeEmail = useCallback((e) => {
+    setEmail(e.target.value);
+  }, []);
+
   const onLogOut = useCallback(() => {
     dispatch(userSlice.actions.logout());
-  }, [dispatch]);
-
-  const onAddPost = useCallback(() => {
-    dispatch(addPost());
   }, [dispatch]);
 
   return (
@@ -39,7 +46,10 @@ function App() {
       ) : (
         <button onClick={onLogOut}>로그아웃</button>
       )}
-      <button onClick={onAddPost}>게시글 작성</button>
+      <div>
+        <b>{totalPrices}원</b>
+      </div>
+      <input type="email" value={email} onChange={onChangeEmail} />
     </div>
   );
 }

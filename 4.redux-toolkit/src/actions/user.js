@@ -1,4 +1,4 @@
-const {createAsyncThunk, isPending, isFulfilled} = require("@reduxjs/toolkit");
+const {createAsyncThunk} = require("@reduxjs/toolkit");
 
 const delay = (time, value) =>
   new Promise((resolve, reject) => {
