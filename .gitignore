@@ -9,5 +9,5 @@ redux-toolkit/.DS_Store
 3.redux/node_modules
 
 # mobx
-
-mobx/node_modules
+5.mobx/node_modules
+6.mobx-react/node_modules

@@ -1,5 +1,5 @@
 {
-  "name": "3.redux",
+  "name": "4.redux-toolkit",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
