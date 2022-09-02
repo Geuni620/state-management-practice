@@ -5,6 +5,8 @@ import {observable} from "mobx";
 import {userStore, postStore} from "./store";
 
 class App extends Component {
+  // 일반적으로 컴포넌트 안에서만 state를 사용하고 싶을 때,
+  // react에서는 setState를 사용하지 않아도 됨
   state = observable({
     name: "",
     password: "",
@@ -12,8 +14,8 @@ class App extends Component {
 
   onClick = () => {
     userStore.login({
-      nickname: "zerocho",
-      password: "비밀번호",
+      nickname: "keunhwee",
+      password: 123,
     });
   };
 

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 const {observable} = require("mobx");
 
 // 객체같은 경우 @observerable 사용할 수 없음
@@ -7,6 +9,10 @@ const userStore = observable({
 
   login(data) {
     this.isLoggingIn = true;
+    /**axios 예시, observable안에서 바로 사용 가능 */
+    // axios.get().then(() => {
+    //   this.data = data;
+    // });
     setTimeout(() => {
       this.data = data;
       this.isLoggingIn = false;

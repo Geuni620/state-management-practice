@@ -11,3 +11,4 @@ redux-toolkit/.DS_Store
 # mobx
 5.mobx/node_modules
 6.mobx-react/node_modules
+7.mobx-react/node_modules
